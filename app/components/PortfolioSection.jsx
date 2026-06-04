@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { useRef } from 'react';
 
 // Hayda array fiyo projects hemmyin. Ba3den fiyak tghayyer el suwar w el titrat.
