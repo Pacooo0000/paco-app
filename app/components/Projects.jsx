@@ -1,7 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 
-// أضفت خاصية videoUrl لكل مشروع
+
 const projects = [
   { id: 1, title: 'Summer Festival Promo', category: 'Event Reels', image: '/images/project1.jpg', videoUrl: '/videos/promo1.mp4' },
   { id: 2, title: 'Urban Streetwear Shoot', category: 'Photography', image: '/images/project2.jpg', videoUrl: '/videos/promo2.mp4' },
@@ -9,7 +9,7 @@ const projects = [
 ];
 
 export default function Projects() {
-  // دالة لفتح الفيديو في صفحة جديدة أو تشغيله
+  
   const handleProjectClick = (url) => {
     window.open(url, '_blank'); 
   };
@@ -24,7 +24,7 @@ export default function Projects() {
             <motion.div 
               key={project.id}
               whileHover={{ scale: 1.02 }}
-              onClick={() => handleProjectClick(project.videoUrl)} // هنا السحر: عند الضغط يفتح الفيديو
+              onClick={() => handleProjectClick(project.videoUrl)} 
               className="bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800 cursor-pointer"
             >
               <div className="h-60 w-full overflow-hidden">
