@@ -1,21 +1,10 @@
 'use client';
 import { motion } from 'framer-motion';
-import { useEffect } from 'react';
 
 export default function HeroSection() {
-  
-  // دالة تشغيل الصوت عند الضغط
   const playClick = () => {
-    new Audio('/audio/click.mp3').play();
+    new Audio('/audio/click.mp3').play().catch(() => {});
   };
-
-  // تشغيل الموسيقى عند تحميل الصفحة (تذكر أن المتصفح قد يمنعها)
-  useEffect(() => {
-    const audio = new Audio('/audio/music.mp3');
-    audio.loop = true;
-    audio.volume = 0.5;
-    audio.play().catch(e => console.log("User interaction required"));
-  }, []);
 
   return (
     <section className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-zinc-950">
@@ -45,12 +34,13 @@ export default function HeroSection() {
         </motion.p>
 
         <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.4 }}>
-          <button 
+          <a 
+            href="#contact" 
             onClick={playClick} 
-            className="bg-white text-zinc-950 font-bold text-lg px-8 py-4 rounded-full transition-transform hover:scale-105 active:scale-95 shadow-[0_0_40px_rgba(255,255,255,0.3)]"
+            className="bg-white text-zinc-950 font-bold text-lg px-8 py-4 rounded-full transition-transform hover:scale-105 active:scale-95 shadow-[0_0_40px_rgba(255,255,255,0.3)] block cursor-pointer"
           >
             BOOK A SHOOT
-          </button>
+          </a>
         </motion.div>
       </div>
     </section>

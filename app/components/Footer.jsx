@@ -2,8 +2,7 @@ import { FaWhatsapp, FaTiktok } from 'react-icons/fa';
 
 export default function Footer() {
   return (
-    <footer className="bg-zinc-950 py-12 text-center border-t border-zinc-800">
-      {/* Online Status */}
+    <footer id="contact" className="bg-zinc-950 py-12 text-center border-t border-zinc-800">
       <div className="flex justify-center items-center gap-2 mb-6">
         <span className="relative flex h-3 w-3">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
