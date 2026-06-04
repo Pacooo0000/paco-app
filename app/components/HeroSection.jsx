@@ -1,7 +1,23 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
+export default function AudioPlayer() {
+  useEffect(() => {
+    const audio = new Audio('/audio/music.mp3');
+    audio.loop = true;
+    audio.volume = 0.5; // 50% volume
+    audio.play().catch(e => console.log("User needs to interact first"));
+  }, []);
 
+  return null;
+}
+const playClick = () => {
+  new Audio('/audio/click.mp3').play();
+};
+
+// Bel component taba3ak:
+<button onClick={playClick}>View Project</button>
 export default function HeroSection() {
   return (
     <section className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-zinc-950">
@@ -35,5 +51,9 @@ export default function HeroSection() {
         </motion.div>
       </div>
     </section>
+
+
+
+
   );
 }
